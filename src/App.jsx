@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <div className="w-full h-screen bg-[#1F1E24] flex">
 
-export default App
+
+
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+      </Routes>
+
+
+
+    </div>
+  );
+};
+
+export default App;
