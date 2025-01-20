@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
+import Trending from "./components/Trending";
 
 const App = () => {
   return (
@@ -9,7 +10,9 @@ const App = () => {
 
 
       <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/trending" element={<Trending/>}></Route>
+        
       </Routes>
 
 

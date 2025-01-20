@@ -15,7 +15,7 @@ const SideBar = () => {
         <h2 className="text-white font-semibold text-xl mb-2">New Feeds</h2>
 
         <Link
-          to="/"
+          to="/trending"
           className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-1"
         >
           <i class="ri-fire-fill"></i> Trending

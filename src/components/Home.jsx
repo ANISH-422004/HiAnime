@@ -5,7 +5,7 @@ import Header from "./templates/Header";
 import axios from "../../src/utils/Axios";
 import HorizontalCards from "./templates/HorizontalCards";
 import Dropdown from "./templates/Dropdown";
-import gif from '../assets/loader.gif'
+import Loader from "./templates/Loader";
 
 const Home = () => {
   document.title = "HiAnime | Home";
@@ -57,9 +57,7 @@ const Home = () => {
       </div>
     </>
   ) : (
-    <div className="h-full w-full bg-transparent flex justify-center items-center">
-        <img src={gif} alt="Random GIF" />
-    </div>
+    <Loader/>
   );
 };
 
