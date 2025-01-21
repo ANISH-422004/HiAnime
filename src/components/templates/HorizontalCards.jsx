@@ -2,7 +2,7 @@ import React from "react";
 import Dropdown from "./Dropdown";
 
 const HorizontalCards = ({ data  ,setCategory}) => {
-  console.log(data); // Optional: Log data to the console for debugging
+  // console.log(data); // Optional: Log data to the console for debugging
 
   return (
 

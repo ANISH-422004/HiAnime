@@ -50,7 +50,7 @@ const Home = () => {
         <div className="w-full  p-5">
           <div className="mb-5 flex justify-between">
             <h1 className="text-3xl font-semibold text-zinc-400">Trending</h1>
-            <Dropdown title="Filter" options={["tv", "movie", "all"]} setCategory={setCaterogy} />
+            <Dropdown title="Filter" options={["tv", "movie", "all"]} func={setCaterogy} />
           </div>
         </div>
         <HorizontalCards data={Trending} setCaterogy={setCaterogy} />

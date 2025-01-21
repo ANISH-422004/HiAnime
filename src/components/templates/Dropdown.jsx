@@ -1,9 +1,10 @@
 import React from "react";
 
-const Dropdown = ({ title, options, setCategory }) => {
+const Dropdown = ({ title, options, func }) => {
+  
   return (
     <div className="select-wrapper">
-      <select defaultValue="0" name="format" id="format" onChange={(e) => setCategory(e.target.value)}>
+      <select defaultValue="0" name="format" id="format" onChange={(e) => func(e.target.value)}>
         <option value="0" disabled>
           {title}
         </option>

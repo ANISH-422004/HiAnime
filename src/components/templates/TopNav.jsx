@@ -31,12 +31,12 @@ const TopNav = () => {
   return (
     <div className="w-full flex justify-center items-center relative mb-1">
       {/* Search Input Container */}
-      <div className="flex items-center w-full md:w-[60%] lg:w-[40%] px-3 bg-zinc-800 rounded-lg border border-zinc-600">
+      <div className="flex items-center w-full md:w-[60%] lg:w-[80%] px-3 bg-zinc-800 rounded-lg border border-zinc-600">
         <i className="text-zinc-400 text-2xl ri-search-line"></i>
         <input
           onChange={(e) => setQuery(e.target.value)}
           value={query}
-          className="flex-1 text-zinc-200 mx-2 p-3 text-lg outline-none border-none bg-transparent"
+          className="flex-1 text-zinc-200 mx-2 p-3 text-lg outline-none border-none bg-transparent w-[100%]"
           type="text"
           placeholder="Search anything..."
         />
@@ -50,7 +50,7 @@ const TopNav = () => {
 
       {/* Search Dropdown */}
       {searches.length > 0 && (
-        <div className="p-1 absolute w-full md:w-[60%] lg:w-[40%] rounded max-h-[50vh] bg-zinc-200 top-[110%] left-0 md:left-auto md:right-auto overflow-y-auto shadow-lg">
+        <div className="p-1 absolute w-full md:w-[60%] lg:w-[80%] rounded max-h-[50vh] bg-zinc-200 top-[110%] left-0 md:left-auto md:right-auto overflow-y-auto shadow-lg">
           {searches.map((s) => (
             <Link
               key={s.id}
