@@ -21,7 +21,7 @@ const SideBar = () => {
           <i class="ri-fire-fill"></i> Trending
         </Link>
         <Link
-          to="/"
+          to="/popular"
           className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-1"
         >
           <i class="ri-bard-fill"></i> Popular
