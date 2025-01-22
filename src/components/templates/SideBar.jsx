@@ -27,13 +27,13 @@ const SideBar = () => {
           <i class="ri-bard-fill"></i> Popular
         </Link>
         <Link
-          to="/"
+          to="/movie"
           className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-1"
         >
           <i class="ri-film-line"></i> Movies
         </Link>
         <Link
-          to="/"
+          to="/tvshows"
           className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-1"
         >
           <i class="ri-tv-2-fill"></i> TV Shows

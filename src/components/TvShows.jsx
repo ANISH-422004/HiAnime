@@ -7,23 +7,21 @@ import Dropdown from "./templates/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Cards from "./templates/Cards";
 
-const Popular = () => {
+const TvShows = () => {
   const navigate = useNavigate();
-  const [category, setCategory] = useState("movie");
-  const [popular, setPopular] = useState([]);
+  const [category, setCategory] = useState("airing_today");
+  const [tvshows, setTvshows] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  document.title = "HiAnime "+"| "+"Popular"
-  
-  console.log(popular);
+  document.title = "HiAnime " + "| " + "TvShows";
 
-  const getPopular = async () => {
+  console.log(tvshows);
+
+  const getTvshows = async () => {
     try {
-      const { data } = await axios.get(
-        `${category}/popular?page=${page}`
-      );
+      const { data } = await axios.get(`/tv/${category}?page=${page}`);
       if (data.results.length > 0) {
-        setPopular((prevState) => [...prevState, ...data.results]);
+        setTvshows((prevState) => [...prevState, ...data.results]);
         setPage(page + 1);
       } else {
         setHasMore(false);
@@ -34,35 +32,31 @@ const Popular = () => {
     }
   };
 
+  const refreshHandeler = () => {
+    if (tvshows.length == 0) {
+      getTvshows();
+    } else {
+      setPage(1);
+      setTvshows([]);
+      getTvshows();
+    }
+  };
 
-    const refreshHandeler =  () => {
-      if (popular.length == 0) {
-        getPopular();
-      } else {
-        setPage(1);
-        setPopular([]);
-        getPopular()
-      }
-    };
-  
-    useEffect(() => {
-      refreshHandeler();
-    }, [category]);
-  
+  useEffect(() => {
+    refreshHandeler();
+  }, [category]);
 
-
-
-
-  return popular.length ? (
+  return tvshows.length ? (
     <div className=" py-3 w-screen h-screen ">
       {/* Header */}
       <div className="w-full flex items-center mb-4 px-5">
         <h1 className="text-2xl w-[20%] font-semibold text-zinc-400 flex items-center">
           <i
             onClick={() => navigate(-1)}
-            className="hover:text-[#6556CD] ri-arrow-left-line cursor-pointer mr-2"
+            className="hover:text-[#6556CD] ri-arrow-left-line cursor-pointer mr-2 "
           />
-          Popular 
+          TV Shows
+          <small className="ml-2 text-sm text-zinc-600">{category}</small>
         </h1>
         <div className="w-[50%]">
           <TopNav />
@@ -70,20 +64,19 @@ const Popular = () => {
 
         <Dropdown
           title="Category"
-          options={["movie", "tv"]}
+          options={["on_the_air", "popular", "top_rated", "airing_today"]}
           func={setCategory}
         />
         <div className="w-[2%]"></div>
-        
       </div>
 
       <InfiniteScroll
-        dataLength={popular.length}
-        next={getPopular}
+        dataLength={tvshows.length}
+        next={getTvshows}
         hasMore={hasMore}
         loader={<h1>Loading...</h1>}
       >
-        <Cards data={popular} title={category} />
+        <Cards data={tvshows} title={category} />
       </InfiniteScroll>
     </div>
   ) : (
@@ -91,4 +84,4 @@ const Popular = () => {
   );
 };
 
-export default Popular;
+export default TvShows;
