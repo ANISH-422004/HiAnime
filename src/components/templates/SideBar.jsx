@@ -39,7 +39,7 @@ const SideBar = () => {
           <i class="ri-tv-2-fill"></i> TV Shows
         </Link>
         <Link
-          to="/"
+          to="/people"
           className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-1"
         >
           <i class="ri-team-line"></i> People
