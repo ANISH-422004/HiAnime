@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import noimage from "../../assets/noimage.jpg";
 
-const Cards = ({ data }) => {
+const Cards = ({ data , title}) => {
+  console.log(title);
+  
   return (
     <div className="flex flex-wrap justify-center gap-6 w-full bg-[#1F1E24] relative">
       {data.map((c, i) => (
         <Link
-          to={`/details/${c.id}`}
+          to={`/${data.media_type || title}/details/${c.id}`}
           className="w-[20vw] max-w-[250px] mb-[3%]"
           key={i}
         >

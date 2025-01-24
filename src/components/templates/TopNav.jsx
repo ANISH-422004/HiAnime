@@ -50,7 +50,7 @@ const TopNav = () => {
 
       {/* Search Dropdown */}
       {searches.length > 0 && (
-        <div className="p-1 absolute w-full md:w-[60%] lg:w-[80%] rounded max-h-[50vh] bg-zinc-200 top-[110%] left-0 md:left-auto md:right-auto overflow-y-auto shadow-lg">
+        <div className="z-[100] p-1 absolute w-full md:w-[60%] lg:w-[80%] rounded max-h-[50vh] bg-zinc-200 top-[110%] left-0 md:left-auto md:right-auto overflow-y-auto shadow-lg">
           {searches.map((s) => (
             <Link
               key={s.id}

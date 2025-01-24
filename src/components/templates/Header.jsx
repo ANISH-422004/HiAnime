@@ -20,7 +20,7 @@ const Header = ({ data }) => {
       </h1>
       <p className="text-white w-[70%] text-xs">
         {data.overview.slice(0, 200)}{" "}
-        <Link className="text-blue-300">...more</Link>{" "}
+        <Link to={`${data.media_type}/details/${data.id}`} className="text-blue-300">...more</Link>
       </p>
       <p className="text-white mt-1">
         <i className="text-yellow-500 text- ri-megaphone-fill"></i>
