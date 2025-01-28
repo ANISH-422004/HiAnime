@@ -31,7 +31,7 @@ const TopNav = () => {
   return (
     <div className="w-full flex justify-center items-center relative mb-1">
       {/* Search Input Container */}
-      <div className="flex items-center w-full md:w-[60%] lg:w-[80%] px-3 bg-zinc-800 rounded-lg border border-zinc-600">
+      <div className="flex items-center w-full md:w-[60%] lg:w-[80%] px-3 rounded-lg border border-zinc-600 bg-zinc-800/40 backdrop-blur-lg shadow-lg">
         <i className="text-zinc-400 text-2xl ri-search-line"></i>
         <input
           onChange={(e) => setQuery(e.target.value)}
@@ -43,22 +43,22 @@ const TopNav = () => {
         {query.length > 0 && (
           <i
             onClick={() => setQuery("")}
-            className="text-zinc-400 text-2xl ri-close-fill cursor-pointer "
+            className="text-zinc-400 text-2xl ri-close-fill cursor-pointer"
           />
         )}
       </div>
 
       {/* Search Dropdown */}
       {searches.length > 0 && (
-        <div className="z-[100] p-1 absolute w-full md:w-[60%] lg:w-[80%] rounded max-h-[50vh] bg-zinc-200 top-[110%] left-0 md:left-auto md:right-auto overflow-y-auto shadow-lg">
+        <div className="z-[100] p-1 absolute w-full md:w-[60%] lg:w-[80%] rounded max-h-[50vh] bg-zinc-800/40 backdrop-blur-lg shadow-xl border border-zinc-700 top-[110%] left-0 md:left-auto md:right-auto overflow-y-auto">
           {searches.map((s) => (
             <Link
               to={`/${s.media_type}/details/${s.id}`}
               key={s.id}
-              className="hover:text-black hover:bg-zinc-300 font-semibold text-zinc-600 w-full p-3 flex justify-start items-center border-b border-zinc-100 gap-5"
+              className="hover:bg-zinc-700/50 font-semibold text-zinc-200 w-full p-3 flex justify-start items-center border-b border-zinc-600 gap-5"
             >
               <img
-                className="w-20 h-12 object-cover"
+                className="w-20 h-12 object-cover rounded-lg"
                 src={
                   s.backdrop_path || s.profile_path
                     ? `https://image.tmdb.org/t/p/original/${

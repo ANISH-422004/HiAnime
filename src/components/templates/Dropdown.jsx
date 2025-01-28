@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Dropdown = ({ title, options, func }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,19 +8,20 @@ const Dropdown = ({ title, options, func }) => {
   const handleSelect = (value) => {
     setSelected(value);
     func(value);
-    setIsOpen(false); // Close dropdown after selection
+    setIsOpen(false);
   };
 
   return (
     <div className="relative w-64">
       {/* Selected Option (Dropdown Button) */}
       <div
-        className="w-full px-4 py-2 rounded-lg border border-white/20 text-white bg-white/10 
+        className="w-full px-4 py-2 flex justify-between items-center rounded-lg border border-white/20 text-white bg-white/10 
                    backdrop-blur-lg focus:ring-2 focus:ring-white/30 outline-none 
                    transition-all duration-300 hover:bg-white/20 cursor-pointer select-none"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {selected}
+        <span>{selected || "Select a category"}</span>
+        <i className={`ri-arrow-${isOpen ? "up" : "down"}-s-line text-white text-lg`}></i>
       </div>
 
       {/* Dropdown Options */}

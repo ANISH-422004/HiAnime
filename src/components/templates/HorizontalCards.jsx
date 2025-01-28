@@ -1,6 +1,7 @@
 import React from "react";
 import Dropdown from "./Dropdown";
 import { Link } from "react-router-dom";
+import noimage from '../../assets/noimage.jpg'
 
 const HorizontalCards = ({ data  ,setCategory}) => {
   // console.log(data); // Optional: Log data to the console for debugging
@@ -14,7 +15,7 @@ const HorizontalCards = ({ data  ,setCategory}) => {
               className="w-full h-[55%] object-cover"
               src={`https://image.tmdb.org/t/p/original/${
                 d.backdrop_path || d.poster_path
-              }`}
+              }` || noimage } 
               alt=""
             />
             <h1 className="text-xl font-bold text-white text-center">

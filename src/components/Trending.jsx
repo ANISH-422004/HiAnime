@@ -9,7 +9,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const Trending = () => {
   const navigate = useNavigate();
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState("movie");
   const [duration, setDuration] = useState("day");
   const [trending, setTrending] = useState([]);
   const [page, setPage] = useState(1);
@@ -63,7 +63,7 @@ const Trending = () => {
 
         <Dropdown
           title="Category"
-          options={["movie", "tv", "all"]}
+          options={["tv", "movie"]}
           func={setCategory}
         />
         <div className="w-[2%]"></div>
