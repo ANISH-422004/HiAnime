@@ -21,8 +21,8 @@ const HorizontalCards = ({ data  ,setCategory}) => {
             <h1 className="text-xl font-bold text-white text-center">
               {d.title || d.original_name || d.original_title}
             </h1>
-            <p className="mt-3 mb-3 text-white text-sm font-light text-center ">
-              {d.overview.slice(0, 60)}...
+            <p className="mt-3 mb-3 text-white text-[0.6rem] font-light text-center ">
+              {d.overview?.slice(0, 60)}...
               <span className="text-blue-400"> more</span>
             </p>
           </Link>
